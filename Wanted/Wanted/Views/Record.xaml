@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wanted.Views.Record"
+             
+             Shell.PresentationMode="ModalAnimated"
+             Title="New Item"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:viewmodels="clr-namespace:Wanted.ViewModels" x:DataType="viewmodels:NewSuspectViewModel"
+             ios:Page.UseSafeArea="true">
+    
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions> 
+
+                <Grid Grid.Row="0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+
+                    <Image Grid.Column="1" Grid.Row="0" Aspect="AspectFit" Source=""/>
+                    <Entry Grid.Column="1" Grid.Row="0" Placeholder="Name"/>
+                    <Entry Grid.Column="1" Grid.Row="1" Placeholder="Surnmae"/>
+                    <Entry Grid.Column="1" Grid.Row="2" Placeholder="Aliase"/>
+                </Grid>
+
+                <StackLayout Grid.Row="1">
+                    <Entry Placeholder="DateOfBirth"/>
+                    <Entry Placeholder="Nationality"/>
+                    <Entry Placeholder="Race"/>
+                    <Entry Placeholder="Hair"/>
+                    <Entry Placeholder="Height"/>
+                    <Entry Placeholder="Eyes"/>
+                    <Entry Placeholder="Gender"/>
+                    <Entry Placeholder="Occupation"/>
+                </StackLayout>
+                
+                
+                <StackLayout Grid.Row="2">
+                    <Entry Placeholder="Danger Level"/>
+                </StackLayout> 
+                
+                <StackLayout Grid.Row="3">
+                    <Entry Placeholder="REWARD"/>
+                    <Entry Placeholder="REMARKS"/>
+                    <Entry Placeholder="CAUTION"/>
+                    <Entry Placeholder="WARNING"/>
+                </StackLayout>
+                
+                
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

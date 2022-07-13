@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wanted.Views.WantedDetails"
+             
+             xmlns:viewmodels="clr-namespace:Wanted.ViewModels"
+             x:DataType="viewmodels:SuspectDetailViewModel"
+             xmlns:model="clr-namespace:Wanted.Models"
+             Title="{Binding Title}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label"  BasedOn="{StaticResource BaseStyleLbl}"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+
+            <Label Text="DANGER" HeightRequest="40"
+                   TextColor="White" BackgroundColor="Red"
+                   HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"
+                   VerticalOptions="Center" VerticalTextAlignment="Center"/>
+
+            <ScrollView Margin="0,10">
+                
+                <Grid Margin="10,10" BackgroundColor="Transparent" RowSpacing="10">
+                
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="162"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Grid Grid.Row="0" RowSpacing="0" HeightRequest="150">
+                    
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="250"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Aspect="AspectFill" Source="{Binding Picture}"/>
+
+                        <StackLayout Grid.Column="1" Margin="4,10" Spacing="10" BackgroundColor="Transparent">
+                        
+                            <Label LineBreakMode="WordWrap" VerticalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding Name}"/>
+                                        <Span Text=" "/>
+                                        <Span Text="{Binding Surname}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label Text="{Binding Gender}" LineBreakMode="NoWrap" VerticalOptions="Center"/>
+                            <Label Text="{Binding Age}" LineBreakMode="NoWrap" VerticalOptions="Center"/>
+                            <Label Text="{Binding Height}" LineBreakMode="NoWrap" VerticalOptions="Center"/>
+                        
+                        </StackLayout>
+                    
+                    </Grid>
+
+                    <Grid Grid.Row="1" Padding="0,0,0,4" RowSpacing="10">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="22"/>
+                            <RowDefinition Height="0.4"/>
+                            <RowDefinition Height="22"/>
+                            <RowDefinition Height="0.4"/>
+                            <RowDefinition Height="22"/>
+                            <RowDefinition Height="0.4"/>
+                            <RowDefinition Height="22"/>
+                            <RowDefinition Height="0.4"/>
+                            <RowDefinition Height="22"/>
+                            <RowDefinition Height="0.4"/>
+                            <RowDefinition Height="22"/>
+                            <RowDefinition Height="0.4"/>
+                            <RowDefinition Height="22"/>
+                        </Grid.RowDefinitions>
+                    
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="INFORMATION" Style="{StaticResource Key=bckoverlay}" 
+                               HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="Name  :    " HorizontalTextAlignment="End" VerticalOptions="Center"/>
+                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding Name}" LineBreakMode="NoWrap" VerticalOptions="Center"/>
+
+                        <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+                        <Label Grid.Row="3" Grid.Column="0" Text="Surname   :    " HorizontalTextAlignment="End" VerticalOptions="Center"/>
+                        <Label Grid.Row="3" Grid.Column="1" Text="{Binding Surname}" LineBreakMode="NoWrap" VerticalOptions="Center"/>
+
+                        <BoxView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+                        <Label Grid.Row="5" Grid.Column="0" Text="Aliases   :    " HorizontalTextAlignment="End" VerticalOptions="Center"/>
+                        <Label Grid.Row="5" Grid.Column="1" Text="{Binding Surname}" LineBreakMode="NoWrap" VerticalOptions="Center"/>
+
+                        <BoxView Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"/>
+                   
+                        <Label Grid.Row="7" Grid.Column="0" Text="Gender    :    " HorizontalTextAlignment="End" VerticalOptions="Center"/>
+                        <Label Grid.Row="7" Grid.Column="1" Text="{Binding Gender}" LineBreakMode="NoWrap" VerticalOptions="Center"/>
+
+                        <BoxView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"/>
+                    
+                        <Label Grid.Row="9" Grid.Column="0" Text="Age   :    " HorizontalTextAlignment="End" VerticalOptions="Center"/>
+                        <Label Grid.Row="9" Grid.Column="1" Text="{Binding Age}" LineBreakMode="NoWrap" VerticalOptions="Center"/>
+                    
+                        <BoxView Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+                        <Label Grid.Row="11" Grid.Column="0" Text="Height    :    " HorizontalTextAlignment="End" VerticalOptions="Center"/>
+                        <Label Grid.Row="11" Grid.Column="1" Text="{Binding Height}" LineBreakMode="NoWrap" VerticalOptions="Center"/>
+
+                        <BoxView Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+                        <Label Grid.Row="13" Grid.Column="0" Text="Nationality  :    " HorizontalTextAlignment="End" VerticalOptions="Center"/>
+                        <Label Grid.Row="13" Grid.Column="1" Text="{Binding Nationality}" LineBreakMode="NoWrap" VerticalOptions="Center"/>
+
+
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        
+                        <Label Grid.Row="0" Text="LAST KNOWN" Style="{StaticResource Key=bckoverlay}" 
+                               HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+                        <Label Style="{StaticResource Key=lbldescription}" Grid.Row="1" Padding="10,4" Text="{Binding Remarks}"/>
+                    </Grid>
+                    
+                    <Grid Grid.Row="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        
+                        <Label Grid.Row="0" Text="CRIME(S)" Style="{StaticResource Key=bckoverlay}" 
+                               HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+                        <Label Style="{StaticResource Key=lbldescription}" Grid.Row="1" Padding="10,4" Text="{Binding Caution}"/>
+                    </Grid>
+
+                    <Grid Grid.Row="4">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Text="REWARD" Style="{StaticResource Key=bckoverlay}" 
+                               HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+                        <Label Style="{StaticResource Key=lbldescription}" Padding="10,4" Grid.Row="1" Text="{Binding Reward}"/>
+                    </Grid>
+                
+                </Grid>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>
+
